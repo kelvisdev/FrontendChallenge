@@ -1,0 +1,74 @@
+<section class="section-tournament col-12">
+  <app-page-title [title]="tournamentTitle"></app-page-title>
+
+  <div *ngIf="quarterFinalGames?.length && semiFinalGames?.length && finalGame" class="tournament">
+    <section *ngIf="quarterFinalGames" class="phase quarterfinals">
+      <div *ngFor="let matchupsQuartas of gamesByPhase(tournamentPhase.QUARTER_FINALS); let indexGrupo = index"
+           class="winners">
+        <div class="matchups">
+          <div *ngFor="let matchup of matchupsQuartas; let indexMatch = index" class="matchup">
+            <div *ngFor="let team of matchup.teams;" class="teams">
+              <app-tournament-item
+                [matchWinnerId]="matchup.matchWinnerId"
+                [team]="team"
+                (selectFinalWinner)="handleSelectWinnerOfQuarterFinal(team.id, indexMatch, indexGrupo)">
+              </app-tournament-item>
+            </div>
+          </div>
+        </div>
+        <ng-container *ngTemplateOutlet="connection"></ng-container>
+      </div>
+    </section>
+
+    <section *ngIf="semiFinalGames" class="phase semifinals">
+      <div class="winners">
+        <div class="matchups">
+          <div
+            *ngFor="let match of gamesByPhase(tournamentPhase.SEMIFINALS); let indexMatch = index"
+            class="matchup">
+            <div class="teams">
+              <app-tournament-item
+                *ngFor="let team of match.teams"
+                [matchWinnerId]="match.matchWinnerId"
+                (selectFinalWinner)="handleSelectWinnerSemiFinal(team.id, indexMatch)"
+                [team]="team">
+              </app-tournament-item>
+            </div>
+          </div>
+        </div>
+        <ng-container *ngTemplateOutlet="connection"></ng-container>
+      </div>
+    </section>
+
+    <section *ngIf="finalGame" class="phase finals">
+      <div class="winners">
+        <div class="matchups">
+          <div class="matchup">
+            <div *ngFor="let team of finalGame.teams" class="teams">
+              <app-tournament-item
+                [matchWinnerId]="finalGame.matchWinnerId"
+                [team]="team"
+                (selectFinalWinner)="handleSelectChampion($event)">
+              </app-tournament-item>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="d-flex justify-content-end mb-4">
+    <app-base-button
+      label="GO BACK"
+      typeButton="button"
+      [disabled]="false"
+      (clickButton)="handleClickButton()">
+    </app-base-button>
+  </div>
+</section>
+
+<ng-template #connection>
+  <div class="line-connecting">
+    <div class="merger"></div>
+    <div class="line"></div>
+  </div>
+</ng-template>

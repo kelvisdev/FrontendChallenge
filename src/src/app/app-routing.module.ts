@@ -10,8 +10,11 @@ const routes: Routes = [
   {
     path: 'teams',
     loadChildren: () => import('./features/team/team.module').then(m => m.TeamModule)
-  }
-
+  },
+  {
+    path: 'tournament',
+    loadChildren: () => import('./features/tournament/tournament.module').then(m => m.TournamentModule)
+  },
 ];
 
 @NgModule({

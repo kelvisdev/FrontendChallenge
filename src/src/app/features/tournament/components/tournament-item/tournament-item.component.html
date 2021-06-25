@@ -1,0 +1,7 @@
+<div
+  class="team"
+  (click)="handleSelectFinalWinner(team?.id)"
+  [ngClass]="{'winner': isWinner}">
+
+  <span>{{team?.name || '--'}}</span>
+</div>

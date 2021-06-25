@@ -1,0 +1,142 @@
+.tournament {
+  display: inline-block;
+  position: relative;
+  margin: 16px;
+  white-space: nowrap;
+  font-size: 0;
+  vertical-align: middle;
+
+  .phase {
+    display: inline-block;
+    vertical-align: middle;
+
+    .winners {
+      & > div {
+        display: inline-block;
+        vertical-align: middle;
+
+        &.matchups .matchup:last-child {
+          margin-bottom: 0 !important;
+        }
+
+        &.matchups .matchup .teams {
+          border-radius: 0.25rem;
+          overflow: hidden;
+          cursor: pointer;
+
+          .team {
+            box-sizing: border-box;
+            background: rgba(1, 10, 19, .7333333333333333);
+            color: #CCA75C;
+            box-shadow: inset 0 0 2px #000000;
+            border: 2px solid #CCA75C;
+            width: 14rem;
+            height: 3rem;
+
+            &:not(:last-child) {
+              border-bottom: thin solid #f0f2f2;
+            }
+
+            &.winner {
+              color: #2375AF;
+              border: 2px solid #2375AF;
+            }
+
+            span {
+              margin: 0 1.25rem;
+              line-height: 3;
+              font-size: 1rem;
+              font-family: 'Marcellus SC', serif;
+            }
+          }
+        }
+
+        &.line-connecting {
+          .line {
+            box-sizing: border-box;
+            width: 2rem;
+            display: inline-block;
+            vertical-align: top;
+
+
+            border-bottom: thin solid #7a5c29;
+            height: 4rem;
+          }
+
+          .merger {
+            position: relative;
+            height: 8rem;
+
+            box-sizing: border-box;
+            width: 2rem;
+            display: inline-block;
+            vertical-align: top;
+          }
+
+          .merger:before {
+            content: "";
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            height: 50%;
+            border: 0 solid;
+            border-color: #7a5c29;
+
+
+            border-right-width: thin;
+            border-top-width: thin;
+          }
+
+          .merger:after {
+            content: "";
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            height: 50%;
+            border: 0 solid;
+            border-color: #7a5c29;
+
+            border-right-width: thin;
+            border-bottom-width: thin;
+          }
+        }
+      }
+    }
+
+    &.quarterfinals {
+
+      .winners:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+
+      .winners .matchups .matchup:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &.phase.semifinals {
+
+      .winners .matchups .matchup:not(:last-child) {
+        margin-bottom: 10rem;
+      }
+
+      .winners .line-connecting .merger {
+        height: 16rem;
+      }
+
+      .winners .line-connecting .line {
+        height: 8rem;
+      }
+    }
+
+    &.phase.finals {
+      .winners .line-connecting .merger {
+        height: 3rem;
+      }
+
+      .winners .line-connecting .line {
+        height: 1.5rem;
+      }
+    }
+  }
+}
