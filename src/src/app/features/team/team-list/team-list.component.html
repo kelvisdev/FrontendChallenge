@@ -1,0 +1,34 @@
+<section class="section-team-list col-12 col-md-8">
+  <app-team-new [formAddTeam]="formAddTeam"
+                [sizeListTeams]="teamsListItems.length"
+                (submitTeam)="handleSubmit()">
+  </app-team-new>
+
+  <div *ngIf="teamsListItems?.length" class="team-list-container rounded-0 card p-3">
+    <div *ngFor="let team of teamsListItems" class="item">
+      <div class="team-list-card card rounded-0 d-flex">
+        <div class="team-list-item-id rounded-start col-2">
+          <label>#{{ team.id }}</label>
+        </div>
+        <div class="team-list-item-description d-flex align-items-center col-10">
+          <label>{{ team.name }}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between mt-1 mb-4">
+    <app-base-button label="RESET"
+                     typeButton="button"
+                     [disabled]="!teamsListItems?.length"
+                     (clickButton)="handleClickResetListTeams()">
+    </app-base-button>
+
+    <app-base-button label="START TOURNAMENT"
+                     typeButton="button"
+                     [disabled]="!validLimit"
+                     (clickButton)="handleClickStartTournament()">
+    </app-base-button>
+  </div>
+</section>
+

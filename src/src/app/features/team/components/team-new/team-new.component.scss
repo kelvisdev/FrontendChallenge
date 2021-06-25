@@ -1,0 +1,11 @@
+input.form-control {
+  background-color: rgba(3, 9, 16, 0.3);
+  border: rgba(3, 9, 16, 0.3);
+}
+
+input.form-control {
+  color: #cdbe91;
+  &:focus {
+    box-shadow: inset 0 0 2px #cdbe91;
+  }
+}

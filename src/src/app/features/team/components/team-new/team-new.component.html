@@ -1,0 +1,8 @@
+<app-page-title [title]="title"></app-page-title>
+
+<form *ngIf="formAddTeam" [formGroup]="formAddTeam" (ngSubmit)="handleSubmit()">
+  <div class="input-group mb-3">
+    <input [readOnly]="maxLimit" type="text" class="form-control" formControlName="name">
+    <app-base-button [disabled]="maxLimit" label="+" typeButton="submit"></app-base-button>
+  </div>
+</form>
