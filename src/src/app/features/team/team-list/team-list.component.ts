@@ -102,6 +102,7 @@ export class TeamListComponent implements OnInit {
   handleClickResetListTeams(): void {
     this.teamsListItems = [];
     this.tournamentService.removeListTeams();
+    window.scroll(0, 0);
   }
 
   get validLimit(): boolean {
