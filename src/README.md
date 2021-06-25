@@ -1,27 +1,46 @@
-# TournamentChallenge
+<p align="center">
+  <img alt="Tournament" src=".github/screen-tournament.png" width="100%">
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
 
-## Development server
+<h1 align="center">
+    Tournament Challenge
+</h1>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 💻 Project
 
-## Code scaffolding
+Uma aplicação simples para gerenciar um torneio entre os reinos em Summoners Rift. Para que seja possível criar um torneio é preciso que sejam cadastrados oito reinos.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## :rocket: Tecnologias
 
-## Build
+Tecnologias utilizadas:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [Angular][angular]
+- [SCSS][scss]
+- [Bootstrap][bootstrap]
 
-## Running unit tests
+### Executar aplicação
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+# Clonar o repositório
+$ git clone https://github.com/kelvisdev/FrontendChallenge
 
-## Running end-to-end tests
+# Entrar na pasta src
+$ cd src/
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Instalar dependências
+$ npm install
 
-## Further help
+# Rodar aplicação
+$ npm start
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+Made with ♥ by Kelvis Borges :wave: [Get in touch!](https://www.linkedin.com/in/kelvis-borges/)
+
+[angular]: https://angular.io/
+[scss]: https://sass-lang.com/documentation/syntax
+[bootstrap]: https://getbootstrap.com/
+
+
+
